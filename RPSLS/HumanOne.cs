@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Program
+    class HumanOne : Player
     {
-        static void Main(string[] args)
+        public HumanOne()
         {
-            Gameplay gameplay = new Gameplay();
-          
+            this.name = "Player One";
+            
+        }
+        public void RandomOutput()
+        {
+
         }
     }
 }
