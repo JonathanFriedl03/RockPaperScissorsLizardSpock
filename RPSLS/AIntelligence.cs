@@ -16,7 +16,7 @@ namespace RPSLS
         }
         public override void ChooseGesture()
         {
-
+           
         }
 
     }

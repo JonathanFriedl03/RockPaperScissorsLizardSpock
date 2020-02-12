@@ -16,14 +16,17 @@ namespace RPSLS
     {
         Player playerOne;
         Player playerTwo;
-        public List<Gesture> gestures;
+        
 
         public  GamePlay()
         {
-          gestures = new List<Gesture>()  { new Gesture("Rock"), new Gesture("Scissors"), new Gesture("Paper"), new Gesture("Lizard"), new Gesture("Spock") };
+           
+        }
+        public void SimulateGame()
+        {
+
         }
 
-        
         public void  DisplayGameRules()
         {
             Console.WriteLine("Welcome to Paper, Rock, Scissors, Lizard, Spock! \nIt's a variation of Paper, Scissors, Rock. Of which the Rules are the same.\nPaper beats Rock but also Spot. Scissors beats Paper and Lizard.\nRock beats Scissors and Lizard. Lizard beats Spock and paper.\nAnd Spock beats Scissors and Rock.");
@@ -37,6 +40,9 @@ namespace RPSLS
             {
                 Console.WriteLine("The game choices are Single Player or Player vs Player! \nPlease select key number 1 for Multiplayer or key number 2 for Single Player");
                 ConsoleKeyInfo input = Console.ReadKey();
+                
+                
+                
                 Console.Clear();
 
                 switch (input.Key)
@@ -57,22 +63,54 @@ namespace RPSLS
                         numberOfWrong++;
                         break;
                 }
-            } while (isValid == false && numberOfWrong < 5);
+            } while (isValid == false && numberOfWrong < 3);
         }
 
         public void SetPlayers(int number)
         {
             if(number == 1)
             {
-                playerOne = new Human();
-                playerTwo = new Human();
+                string newName = Getmethod()
+                playerOne = new Human(newName);
+                playerTwo = new Human(newName);
             }
             else if(number == 2)
             {
-                playerOne = new Human();
+                string newName = Getmethod()
+
+                playerOne = new Human(newName);
                 playerTwo = new AIntelligence();
             }
         }
+        
+        public void DisplayGesture()
+        {
+            for (int i = 0; i < playerOne.gestures.Count; i++)
+                Console.WriteLine(i + " " + playerOne.gestures[0]);
+        }
+        public void Getmethod()
+        {
+
+        }
+        public void ChooseGesture()
+        {
+
+
+        }
+        public void CompareGesture()
+        {
+        }
+        public void DetermineRoundWInner()
+        {
+        }
+        public void IncrementScore()
+        {
+        }
+        public void CheckIfGameWinner()
+        {
+        }
+
+
 
 
     }

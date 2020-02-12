@@ -8,10 +8,16 @@ namespace RPSLS
 {
     class Human : Player
     {
-        
-        
+        public Human(string name)
+        {
+            this.name = name;
+        }
+
+
         public override void ChooseGesture()
         {
+            Console.WriteLine("Choose gesture");
+            
 
         }
     }
