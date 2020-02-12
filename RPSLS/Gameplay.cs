@@ -6,41 +6,74 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Gameplay //need to establish players vs players
+    class GamePlay 
+                    //Display Rules    
+                    //need to establish players vs players
                   // "" call for user to determine whether or not there will be comp vs user or user vs user
                   //""compare turns and outcome of score and or user input 
-                  //""simulate battle
+                //method that increments player score  
+                //""simulate battle
     {
-        AIntelligence aIntelligence;
-        HumanOne playerOne;
-        HumanTwo playerTwo;
-        public Gameplay()
+        Player playerOne;
+        Player playerTwo;
+        public List<Gesture> gestures;
+
+        public  GamePlay()
         {
-            aIntelligence = new AIntelligence();
-            playerOne = new HumanOne();
-            playerTwo = new HumanTwo();
+          gestures = new List<Gesture>()  { new Gesture("Rock"), new Gesture("Scissors"), new Gesture("Paper"), new Gesture("Lizard"), new Gesture("Spock") };
         }
 
-        public void DisplayGameOptions(string userChoice)
+        
+        public void  DisplayGameRules()
         {
-            Console.WriteLine("Please choose Player vs Player or Computer vs Player" );
-            if (userChoice == "Player v Player")
+            Console.WriteLine("Welcome to Paper, Rock, Scissors, Lizard, Spock! \nIt's a variation of Paper, Scissors, Rock. Of which the Rules are the same.\nPaper beats Rock but also Spot. Scissors beats Paper and Lizard.\nRock beats Scissors and Lizard. Lizard beats Spock and paper.\nAnd Spock beats Scissors and Rock.");
+        }
+
+        public void ChoosePlayerType()
+        {
+            bool isValid = false;
+            int numberOfWrong = 0;
+            do
             {
+                Console.WriteLine("The game choices are Single Player or Player vs Player! \nPlease select key number 1 for Multiplayer or key number 2 for Single Player");
+                ConsoleKeyInfo input = Console.ReadKey();
+                Console.Clear();
 
-            }
-        //    {
-        //        for (int i = 0; i < fleet.robots.Count; i++)
-        //        {
-        //            Console.WriteLine(i + ") " + fleet.robots[i].name);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        for (int i = 0; i < herd.dinosaurs.Count; i++)
-        //        {
-        //            Console.WriteLine(i + ") " + herd.dinosaurs[i].name);
-        //        }
-        //    }
+                switch (input.Key)
+                {
+                    case ConsoleKey.NumPad1:
+                    case ConsoleKey.D1:
+                        SetPlayers(1) ;
+                        isValid = true;
+                        break;
+                    case ConsoleKey.D2:
+                    case ConsoleKey.NumPad2:
+                        SetPlayers(2) ;
+                        isValid = true;
+                        break;
+                    default:
+                        Console.WriteLine("Please enter a valid number by pressing key number 1 or key number 2! Press enter to continue.");
+                        Console.ReadLine();
+                        numberOfWrong++;
+                        break;
+                }
+            } while (isValid == false && numberOfWrong < 5);
         }
+
+        public void SetPlayers(int number)
+        {
+            if(number == 1)
+            {
+                playerOne = new Human();
+                playerTwo = new Human();
+            }
+            else if(number == 2)
+            {
+                playerOne = new Human();
+                playerTwo = new AIntelligence();
+            }
+        }
+
+
     }
 }

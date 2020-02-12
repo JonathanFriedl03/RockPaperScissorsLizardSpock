@@ -10,8 +10,10 @@ namespace RPSLS
     {
         static void Main(string[] args)
         {
-            Gameplay gameplay = new Gameplay();
-          
+            GamePlay gameplay = new GamePlay();
+            gameplay.ChoosePlayerType();
+            Console.ReadLine();
+
         }
     }
 }

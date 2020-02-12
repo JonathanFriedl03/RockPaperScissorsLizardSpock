@@ -11,10 +11,10 @@ namespace RPSLS
     {
         public AIntelligence()
         {
-            this.name = "computer";
+            this.name = "Computer";
            
         }
-        public void RandomOutput()
+        public override void ChooseGesture()
         {
 
         }

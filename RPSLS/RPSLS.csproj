@@ -46,8 +46,7 @@
     <Compile Include="AIntelligence.cs" />
     <Compile Include="Gameplay.cs" />
     <Compile Include="Gesture.cs" />
-    <Compile Include="HumanOne.cs" />
-    <Compile Include="HumanTwo.cs" />
+    <Compile Include="Human.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

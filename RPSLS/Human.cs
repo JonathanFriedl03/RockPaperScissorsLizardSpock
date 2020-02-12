@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class HumanTwo : Player
+    class Human : Player
     {
-        public HumanTwo()
-        {
-            this.name = "Player Two";
-            
-        }
-        public void RandomOutput()
+        
+        
+        public override void ChooseGesture()
         {
 
         }
