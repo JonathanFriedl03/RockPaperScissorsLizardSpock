@@ -11,6 +11,7 @@ namespace RPSLS
         public string name;
         public int score;
         public List<string> gestures;
+        public string gesture;
         public Player()
         {
             this.score = 0;

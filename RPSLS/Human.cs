@@ -8,6 +8,7 @@ namespace RPSLS
 {
     class Human : Player
     {
+
         public Human(string name)
         {
             this.name = name;
@@ -16,8 +17,16 @@ namespace RPSLS
 
         public override void ChooseGesture()
         {
-            Console.WriteLine("Choose gesture");
             
+            
+            for (int i = 0; i < gestures.Count; i++)
+            {
+                Console.WriteLine(gestures[i]);
+            }
+                   
+            
+            Console.WriteLine("Choose gesture");
+            gesture = Console.ReadLine();
 
         }
     }
