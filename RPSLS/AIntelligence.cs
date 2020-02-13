@@ -9,6 +9,7 @@ namespace RPSLS
     class AIntelligence : Player
 
     {
+        Random rnd = new Random();
         public AIntelligence()
         {
             this.name = "Computer";
@@ -16,7 +17,8 @@ namespace RPSLS
         }
         public override void ChooseGesture()
         {
-           
+            int rnd = this.rnd.Next(1, 6);
+            gesture = gestures[rnd -1].move;
         }
 
     }

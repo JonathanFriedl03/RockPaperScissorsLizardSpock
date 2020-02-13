@@ -10,13 +10,13 @@ namespace RPSLS
     {
         public string name;
         public int score;
-        public List<string> gestures;
+        public List<Gesture> gestures;
         public string gesture;
         public Player()
         {
             this.score = 0;
             
-            gestures = new List<string>()  {"Rock", "Scissors","Paper", "Lizard", "Spock" };
+            gestures = new List<Gesture>() {new Gesture("Rock"), new Gesture("Scissors"), new Gesture("Paper"), new Gesture("Lizard"), new Gesture("Spock")};
         }
         public abstract void ChooseGesture();
         

@@ -11,7 +11,7 @@ namespace RPSLS
         static void Main(string[] args)
         {
             GamePlay gameplay = new GamePlay();
-            gameplay.SimulateGame();
+            gameplay.ChoosePlayerType();
             Console.ReadLine();
 
         }

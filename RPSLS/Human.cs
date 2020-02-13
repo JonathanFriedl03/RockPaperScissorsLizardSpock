@@ -14,19 +14,43 @@ namespace RPSLS
             this.name = name;
         }
 
-
-        public override void ChooseGesture()
+        public void PrintGesture()
         {
             
             
             for (int i = 0; i < gestures.Count; i++)
             {
-                Console.WriteLine(gestures[i]);
+                Console.WriteLine(i + ")" + gestures[i]);
             }
-                   
-            
+                          
             Console.WriteLine("Choose gesture");
+            
+        }
+        
+        public override void ChooseGesture()
+        {
+            PrintGesture();
             gesture = Console.ReadLine();
+            try
+            {
+                if (int.Parse(gesture) <= 5 && int.Parse(gesture) > 0)
+                {
+                    gesture = gestures[int.Parse(gesture) - 1].move;
+                }
+                else
+                {
+                    Console.WriteLine("Not a valid choice");
+                    ChooseGesture();
+                }
+                
+            }
+            catch(FormatException)
+            {
+                Console.WriteLine("Not a valid choice");
+                ChooseGesture();
+            }
+        
+
 
         }
     }

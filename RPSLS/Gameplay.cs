@@ -26,11 +26,11 @@ namespace RPSLS
         {
            
         }
-        //public void SimulateGame()
-        //{
-        //    ChoosePlayerType();
-        //    DisplayGestureOptions();
-        //}
+        public void SimulateGame()
+        {
+            ChoosePlayerType();
+            
+        }
 
         public void  DisplayGameRules()
         {
@@ -94,34 +94,35 @@ namespace RPSLS
                 return newName;
                 
         }
+        public void CompareGesture() 
+        {
 
-    //    // have each team attack eachother back and forth until one team dies
-    //    bool dinosTurn = true;
-    //        while (herd.dinosaurs.Count > 0 && fleet.robots.Count > 0)
-    //        {
-    //            if(dinosTurn == true)
+        }
+    //public void DetermineRoundWInner(string playerOneChoice, string playerTwoChoice)
+    //    {
+    //            if (playerOneChoice > playerTwoChoice)
     //            {
-    //                //DinosTurn(herd.dinosaurs[0]);
-    //                WarriorTurn(herd.dinosaurs[0], "dinos", fleet.robots);
-    //    dinosTurn = false;
+    //                playerOneScore++;
+    //                Console.WriteLine("Player One's Score is " + playerOneScore + " Player One Wins This Round!");
+
     //            }
+
+    //            else if (playerTwoChoice > playerOneChoice)
+    //            {
+    //                playerTwoScore++;
+    //                Console.WriteLine("Player Two's Score is " + playerTwoScore + " Player Two Wins This Round!");
+
+
+    //            }
+
     //            else
     //            {
-    //                //RoboTurn(fleet.robots[0]);
-    //                WarriorTurn(fleet.robots[0], "robos", herd.dinosaurs);
-    //dinosTurn = true;
+    //                Console.WriteLine("Tie! Try Again Players!");
+    //            playerOne.ChooseGesture();
     //            }
-
-
-              
+             
+       // }
         
-        public void CompareGesture()
-        {
-
-        }
-        public void DetermineRoundWInner()
-        {
-        }
         public void IncrementScore()
         {
         }
