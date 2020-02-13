@@ -14,28 +14,16 @@ namespace RPSLS
             this.name = name;
         }
 
-        public void PrintGesture()
-        {
-            
-            
-            for (int i = 0; i < gestures.Count; i++)
-            {
-                Console.WriteLine(i + ")" + gestures[i]);
-            }
-                          
-            Console.WriteLine("Choose gesture");
-            
-        }
         
         public override void ChooseGesture()
         {
-            PrintGesture();
-            gesture = Console.ReadLine();
+            Console.WriteLine("Choose gesture 0-4");
+            var gesture = Console.ReadLine();
             try
             {
-                if (int.Parse(gesture) <= 5 && int.Parse(gesture) > 0)
+                if (int.Parse(gesture) <= 5 && int.Parse(gesture) >= 0)
                 {
-                    gesture = gestures[int.Parse(gesture) - 1].move;
+                    gesture = gestures[int.Parse(gesture) ].move;
                 }
                 else
                 {
