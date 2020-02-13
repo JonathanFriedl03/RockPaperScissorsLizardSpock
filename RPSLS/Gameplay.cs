@@ -70,33 +70,25 @@ namespace RPSLS
         {
             if(number == 1)
             {
-                string newName = Getmethod()
+                string newName = GetNames()
                 playerOne = new Human(newName);
                 playerTwo = new Human(newName);
             }
             else if(number == 2)
             {
-                string newName = Getmethod()
+                string newName = GetNames()
 
                 playerOne = new Human(newName);
                 playerTwo = new AIntelligence();
             }
         }
         
-        public void DisplayGesture()
-        {
-            for (int i = 0; i < playerOne.gestures.Count; i++)
-                Console.WriteLine(i + " " + playerOne.gestures[0]);
-        }
-        public void Getmethod()
-        {
-
-        }
         public void ChooseGesture()
         {
-
-
+            for (int i = 0; i < playerOne.gestures.Count; i++)
+                Console.WriteLine(playerOne.gestures[i]);
         }
+                
         public void CompareGesture()
         {
         }
