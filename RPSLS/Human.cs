@@ -18,12 +18,13 @@ namespace RPSLS
         public override void ChooseGesture()
         {
             Console.WriteLine("Choose gesture 0-4");
-            var gesture = Console.ReadLine();
+                       
+            gesture = Console.ReadLine();
             try
             {
                 if (int.Parse(gesture) <= 5 && int.Parse(gesture) >= 0)
                 {
-                    gesture = gestures[int.Parse(gesture) ].move;
+                    gesture = gestures[int.Parse(gesture)].move;
                 }
                 else
                 {

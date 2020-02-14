@@ -21,7 +21,10 @@ namespace RPSLS
         public abstract void ChooseGesture();
         public void PrintGesture()
         {
-
+            Console.ResetColor();
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
 
             for (int i = 0; i < gestures.Count; i++)
             {
