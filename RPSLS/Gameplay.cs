@@ -31,7 +31,7 @@ namespace RPSLS
             DisplayGameRules();
 
             ChooseGameType();
-            while(playerOne.score < 4 && playerTwo.score < 4)
+            while(playerOne.score < 3 && playerTwo.score < 3)
             {
                 playerOne.PrintGesture();
 
@@ -127,6 +127,7 @@ namespace RPSLS
             if (playerOne.gesture == playerTwo.gesture)
             {
                 Console.WriteLine("This round is a Tie! Lets try Again");
+                Console.ReadLine();
             }
             //rock beat scissors and lizard 1
             else if (playerOne.gesture == "Rock" && (playerTwo.gesture == "Scissors" || playerTwo.gesture == "Lizard"))
@@ -170,14 +171,14 @@ namespace RPSLS
             else if (playerTwo.gesture == "Scissors" && (playerOne.gesture == "Paper" || playerOne.gesture == "Lizard"))
             {
                 Console.WriteLine($"{playerTwo.gesture} CUTS {playerOne.gesture}");
-                playerOne.score++;
+                playerTwo.score++;
                 Console.WriteLine($"{playerTwo.name} score is { playerTwo.score}. {playerTwo.name} wins this round!");
                 Console.ReadLine();
             }//Paper beats rock  & spot
             else if (playerTwo.gesture == "Paper" && (playerOne.gesture == "Rock" || playerOne.gesture == "Spot"))
             {
                 Console.WriteLine($"{playerTwo.gesture} COVERS {playerOne.gesture}");
-                playerOne.score++;
+                playerTwo.score++;
                 Console.WriteLine($"{playerTwo.name} score is { playerTwo.score}. {playerTwo.name} wins this round!");
                 Console.ReadLine();
             }//Lizard beats spock & paper
@@ -205,10 +206,12 @@ namespace RPSLS
             if(playerOne.score ==3)
             {
                 Console.WriteLine(($"{ playerOne.name} Wins!"));
+                Console.ReadLine();
             }
-            else
+            else if (playerTwo.score == 3)
             {
                 Console.WriteLine(($"{playerTwo.name} Wins!"));
+                Console.ReadLine();
             }
         }
 

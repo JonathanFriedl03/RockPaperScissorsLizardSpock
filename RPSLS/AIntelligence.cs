@@ -17,8 +17,8 @@ namespace RPSLS
         }
         public override void ChooseGesture()
         {
-            int rnd = this.rnd.Next(1, 6);
-            gesture = gestures[rnd -1].move;
+            int rnd = this.rnd.Next(1, 5);
+            gesture = gestures[rnd].move;
         }
 
     }
